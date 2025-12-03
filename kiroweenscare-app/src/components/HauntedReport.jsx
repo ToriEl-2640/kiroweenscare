@@ -1,17 +1,10 @@
 const MONSTERS = {
-  ghost: { emoji: '👻', name: 'Ghost', color: 'from-purple-400 to-purple-300', glow: 'rgba(168, 85, 247, 0.3)' },
-  zombie: { emoji: '🧟', name: 'Zombie', color: 'from-emerald-400 to-teal-300', glow: 'rgba(16, 185, 129, 0.3)' },
-  vampire: { emoji: '🧛', name: 'Vampire', color: 'from-pink-400 to-rose-300', glow: 'rgba(236, 72, 153, 0.3)' },
-  demon: { emoji: '😈', name: 'Demon', color: 'from-orange-400 to-amber-300', glow: 'rgba(251, 146, 60, 0.3)' },
-  witch: { emoji: '🧙', name: 'Witch', color: 'from-purple-400 to-pink-300', glow: 'rgba(192, 132, 252, 0.3)' },
-  skeleton: { emoji: '💀', name: 'Skeleton', color: 'from-slate-300 to-gray-200', glow: 'rgba(148, 163, 184, 0.3)' }
-}
-
-const SEVERITY_COLORS = {
-  critical: 'bg-gradient-to-br from-red-950/60 to-pink-950/60 border-red-500/40',
-  high: 'bg-gradient-to-br from-orange-950/60 to-amber-950/60 border-orange-500/40',
-  medium: 'bg-gradient-to-br from-yellow-950/60 to-amber-950/60 border-yellow-500/40',
-  low: 'bg-gradient-to-br from-blue-950/60 to-cyan-950/60 border-blue-500/40'
+  ghost: { emoji: '👻', name: 'Ghost', bg: 'bg-purple-100', border: 'border-purple-400', text: 'text-purple-700' },
+  zombie: { emoji: '🧟', name: 'Zombie', bg: 'bg-green-100', border: 'border-green-400', text: 'text-green-700' },
+  vampire: { emoji: '🧛', name: 'Vampire', bg: 'bg-red-100', border: 'border-red-400', text: 'text-red-700' },
+  demon: { emoji: '😈', name: 'Demon', bg: 'bg-orange-100', border: 'border-orange-400', text: 'text-orange-700' },
+  witch: { emoji: '🧙', name: 'Witch', bg: 'bg-pink-100', border: 'border-pink-400', text: 'text-pink-700' },
+  skeleton: { emoji: '💀', name: 'Skeleton', bg: 'bg-gray-100', border: 'border-gray-400', text: 'text-gray-700' }
 }
 
 export default function HauntedReport({ analysis }) {
@@ -19,32 +12,32 @@ export default function HauntedReport({ analysis }) {
   const criticalCount = analysis.issues.filter(i => i.severity === 'critical').length
 
   return (
-    <div className="max-w-6xl mx-auto mt-16" style={{fontFamily: 'Inter, sans-serif'}}>
-      <div className="glass-panel neon-glow rounded-3xl shadow-2xl p-12 border border-purple-500/30">
-        <h2 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-300 mb-12 text-center tracking-tight" style={{fontFamily: 'Space Grotesk, sans-serif'}}>
-          ANALYSIS REPORT
+    <div className="max-w-5xl mx-auto mt-12" style={{fontFamily: 'Fredoka, sans-serif'}}>
+      <div className="bg-white rounded-3xl shadow-2xl p-10 border-8 border-pink-400">
+        <h2 className="text-5xl font-black text-pink-600 mb-10 text-center">
+          ⚰️ Monster Report! ⚰️
         </h2>
         
-        <div className="grid grid-cols-3 gap-8 mb-16">
-          <div className="stats-card glass-panel p-8 rounded-2xl text-center border border-purple-500/30 neon-glow">
-            <div className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">{totalIssues}</div>
-            <div className="text-purple-300 mt-3 font-semibold tracking-wide uppercase text-sm">Issues Found</div>
+        <div className="grid grid-cols-3 gap-6 mb-12">
+          <div className="stats-card bg-purple-200 p-6 rounded-2xl text-center border-4 border-purple-500 shadow-xl">
+            <div className="text-6xl font-black text-purple-700">{totalIssues}</div>
+            <div className="text-purple-700 mt-2 font-bold text-lg">Monsters!</div>
           </div>
-          <div className="stats-card glass-panel p-8 rounded-2xl text-center border border-pink-500/30 neon-glow" style={{animationDelay: '0.2s'}}>
-            <div className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-red-400">{criticalCount}</div>
-            <div className="text-pink-300 mt-3 font-semibold tracking-wide uppercase text-sm">Critical</div>
+          <div className="stats-card bg-red-200 p-6 rounded-2xl text-center border-4 border-red-500 shadow-xl" style={{animationDelay: '0.2s'}}>
+            <div className="text-6xl font-black text-red-700">{criticalCount}</div>
+            <div className="text-red-700 mt-2 font-bold text-lg">Critical!</div>
           </div>
-          <div className="stats-card glass-panel p-8 rounded-2xl text-center border border-blue-500/30 neon-glow" style={{animationDelay: '0.4s'}}>
-            <div className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">{analysis.linesAnalyzed}</div>
-            <div className="text-blue-300 mt-3 font-semibold tracking-wide uppercase text-sm">Lines Analyzed</div>
+          <div className="stats-card bg-blue-200 p-6 rounded-2xl text-center border-4 border-blue-500 shadow-xl" style={{animationDelay: '0.4s'}}>
+            <div className="text-6xl font-black text-blue-700">{analysis.linesAnalyzed}</div>
+            <div className="text-blue-700 mt-2 font-bold text-lg">Lines!</div>
           </div>
         </div>
 
         {totalIssues === 0 ? (
-          <div className="text-center py-20">
-            <div className="text-9xl mb-8">✨</div>
-            <p className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 font-bold tracking-tight" style={{fontFamily: 'Space Grotesk, sans-serif'}}>CODE CLEAN</p>
-            <p className="text-purple-300 mt-4">No issues detected</p>
+          <div className="text-center py-16 bg-green-100 rounded-3xl border-4 border-green-400">
+            <div className="text-9xl mb-6">✨</div>
+            <p className="text-4xl text-green-700 font-black">All Clear!</p>
+            <p className="text-xl text-green-600 font-bold mt-2">No monsters found! 🎉</p>
           </div>
         ) : (
           <div className="space-y-6">
@@ -53,29 +46,29 @@ export default function HauntedReport({ analysis }) {
               return (
                 <div 
                   key={idx}
-                  className={`monster-card p-8 rounded-2xl border-2 backdrop-blur-xl ${SEVERITY_COLORS[issue.severity]}`}
-                  style={{animationDelay: `${idx * 0.15}s`, boxShadow: `0 10px 40px ${monster.glow}`}}
+                  className={`monster-card p-8 rounded-2xl border-4 ${monster.bg} ${monster.border} shadow-xl`}
+                  style={{animationDelay: `${idx * 0.15}s`}}
                 >
-                  <div className="flex items-start gap-8">
-                    <div className="monster-emoji text-7xl">{monster.emoji}</div>
+                  <div className="flex items-start gap-6">
+                    <div className="monster-emoji text-8xl">{monster.emoji}</div>
                     <div className="flex-1">
-                      <h3 className={`text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${monster.color} mb-3 tracking-tight`} style={{fontFamily: 'Space Grotesk, sans-serif'}}>
+                      <h3 className={`text-3xl font-black ${monster.text} mb-3`}>
                         {monster.name}: {issue.title}
                       </h3>
-                      <p className="text-purple-200 mb-5 leading-relaxed text-lg">{issue.description}</p>
+                      <p className={`${monster.text} mb-4 leading-relaxed text-lg font-semibold`}>{issue.description}</p>
                       {issue.line && (
-                        <p className="text-sm text-purple-300 mb-5">
-                          📍 Line {issue.line}: <code className="bg-slate-900/80 px-4 py-2 rounded-lg font-mono text-purple-200 shadow-lg border border-purple-500/20">{issue.code}</code>
+                        <p className={`text-base ${monster.text} mb-4 font-bold`}>
+                          📍 Line {issue.line}: <code className="bg-white px-3 py-2 rounded-lg font-mono border-2 border-purple-300">{issue.code}</code>
                         </p>
                       )}
                       <div className="mt-4">
-                        <span className={`text-xs font-bold px-5 py-2.5 rounded-full shadow-lg tracking-wider uppercase ${
-                          issue.severity === 'critical' ? 'bg-red-600/90 text-white' :
-                          issue.severity === 'high' ? 'bg-orange-600/90 text-white' :
-                          issue.severity === 'medium' ? 'bg-yellow-600/90 text-white' :
-                          'bg-blue-600/90 text-white'
+                        <span className={`text-sm font-black px-5 py-2 rounded-full shadow-lg ${
+                          issue.severity === 'critical' ? 'bg-red-500 text-white' :
+                          issue.severity === 'high' ? 'bg-orange-500 text-white' :
+                          issue.severity === 'medium' ? 'bg-yellow-500 text-white' :
+                          'bg-blue-500 text-white'
                         }`}>
-                          {issue.severity}
+                          {issue.severity.toUpperCase()}!
                         </span>
                       </div>
                     </div>

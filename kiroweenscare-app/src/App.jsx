@@ -8,36 +8,30 @@ function App() {
   const [analysis, setAnalysis] = useState(null)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900 relative overflow-hidden">
-      {/* Cosmic background layers */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-900/30 via-transparent to-transparent"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-pink-900/20 via-transparent to-transparent"></div>
+    <div className="min-h-screen bg-gradient-to-br from-yellow-100 via-pink-100 to-purple-200 relative overflow-hidden">
+      {/* Fun floating shapes */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-purple-400 rounded-full opacity-20 floating-shape"></div>
+      <div className="absolute top-40 right-20 w-40 h-40 bg-pink-400 rounded-full opacity-20 floating-shape" style={{animationDelay: '1s'}}></div>
+      <div className="absolute bottom-32 left-1/4 w-36 h-36 bg-yellow-400 rounded-full opacity-20 floating-shape" style={{animationDelay: '2s'}}></div>
+      <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-blue-400 rounded-full opacity-20 floating-shape" style={{animationDelay: '3s'}}></div>
       
-      {/* Floating liquid orbs */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-purple-600/20 to-pink-600/20 liquid-shape blur-3xl floating-orb"></div>
-      <div className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-br from-blue-600/20 to-purple-600/20 liquid-shape blur-3xl floating-orb" style={{animationDelay: '3s'}}></div>
-      <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-br from-pink-600/15 to-purple-600/15 liquid-shape blur-3xl floating-orb" style={{animationDelay: '6s'}}></div>
-      
-      {/* Grid overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.03)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none"></div>
-      
-      <header className="text-center py-20 relative z-10">
-        <h1 className="text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-300 haunted-title mb-6" style={{fontFamily: 'Space Grotesk, sans-serif', letterSpacing: '-0.02em'}}>
-          KIROWEENSCARE
+      <header className="text-center py-16 relative z-10">
+        <h1 className="text-8xl font-black text-purple-600 haunted-title mb-4" style={{fontFamily: 'Fredoka, sans-serif'}}>
+          👻 Kiroweenscare
         </h1>
-        <p className="text-2xl text-purple-300/90 haunted-subtitle font-light tracking-wide" style={{fontFamily: 'Inter, sans-serif'}}>
-          Haunted Code Review — Where Bugs Become Monsters
+        <p className="text-3xl text-pink-600 font-bold" style={{fontFamily: 'Bubblegum Sans, sans-serif'}}>
+          Where Bugs Become Monsters! 🎃
         </p>
       </header>
 
-      <main className="container mx-auto px-6 pb-24 relative z-10 max-w-7xl">
+      <main className="container mx-auto px-6 pb-20 relative z-10 max-w-6xl">
         <CodeAnalyzer onAnalyze={setAnalysis} />
         {analysis && <HauntedReport analysis={analysis} />}
         <Guide />
       </main>
 
-      <footer className="text-center py-10 text-purple-400/50 text-sm relative z-10 tracking-wide" style={{fontFamily: 'Inter, sans-serif'}}>
-        Built with Kiro AI for Kiroween Hackathon 2025 ✨
+      <footer className="text-center py-8 text-purple-500 text-lg font-bold relative z-10" style={{fontFamily: 'Fredoka, sans-serif'}}>
+        Built with Kiro AI ✨
       </footer>
     </div>
   )
