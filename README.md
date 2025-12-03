@@ -66,7 +66,9 @@ Created `.kiro/hooks/pre-commit.sh` to automate quality checks:
 
 ## 🎬 Demo
 
-[Demo Video URL - 3 minutes]
+**Live App:** https://kiroweenscare.vercel.app/
+
+**Demo Video:** [Coming soon]
 
 ## 🚀 Installation
 
