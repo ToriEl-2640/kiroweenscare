@@ -18,17 +18,17 @@ export default function CodeAnalyzer({ onAnalyze }) {
   }
 
   return (
-    <div className="code-input max-w-5xl mx-auto glass-panel rounded-3xl shadow-2xl p-10 border-2 border-purple-300/60" style={{fontFamily: 'Nunito, sans-serif'}}>
-      <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-400 mb-8">
-        🔮 Submit Your Code for Haunting
+    <div className="code-input max-w-6xl mx-auto glass-panel neon-glow rounded-3xl shadow-2xl p-12 border border-purple-500/30" style={{fontFamily: 'Inter, sans-serif'}}>
+      <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-300 mb-10" style={{fontFamily: 'Space Grotesk, sans-serif', letterSpacing: '-0.01em'}}>
+        🔮 Submit Code for Analysis
       </h2>
       
-      <div className="mb-6 p-5 border-2 border-purple-200/60 rounded-2xl bg-white/30">
-        <label className="block text-purple-700 mb-3 text-sm font-semibold">Language:</label>
+      <div className="mb-8 p-6 border border-purple-500/20 rounded-2xl bg-slate-900/40 backdrop-blur-xl hover:border-purple-400/40 transition-all">
+        <label className="block text-purple-300 mb-4 text-sm font-semibold tracking-wide uppercase">Language</label>
         <select 
           value={language}
           onChange={(e) => setLanguage(e.target.value)}
-          className="w-full bg-white/60 backdrop-blur text-purple-900 px-5 py-3 rounded-2xl border-2 border-purple-200/50 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-300/50 transition-all shadow-sm"
+          className="w-full bg-slate-900/60 backdrop-blur text-purple-100 px-6 py-4 rounded-xl border border-purple-500/30 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/50 transition-all shadow-lg hover:shadow-purple-500/20"
         >
           <option value="javascript">JavaScript</option>
           <option value="python">Python</option>
@@ -37,22 +37,22 @@ export default function CodeAnalyzer({ onAnalyze }) {
         </select>
       </div>
 
-      <div className="mb-8 p-5 border-2 border-purple-200/60 rounded-2xl bg-white/30">
-        <label className="block text-purple-700 mb-3 text-sm font-semibold">Paste Your Code:</label>
+      <div className="mb-10 p-6 border border-purple-500/20 rounded-2xl bg-slate-900/40 backdrop-blur-xl hover:border-purple-400/40 transition-all">
+        <label className="block text-purple-300 mb-4 text-sm font-semibold tracking-wide uppercase">Code Input</label>
         <textarea
           value={code}
           onChange={(e) => setCode(e.target.value)}
-          placeholder="// Paste your cursed code here..."
-          className="w-full h-72 bg-white/60 backdrop-blur text-purple-900 px-5 py-4 rounded-2xl border-2 border-purple-200/50 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-300/50 font-mono text-sm transition-all placeholder-purple-400/60 shadow-sm"
+          placeholder="// Paste your code here for haunted analysis..."
+          className="w-full h-80 bg-slate-900/60 backdrop-blur text-purple-100 px-6 py-5 rounded-xl border border-purple-500/30 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/50 font-mono text-sm transition-all placeholder-purple-400/40 shadow-lg hover:shadow-purple-500/20"
         />
       </div>
 
       <button
         onClick={handleAnalyze}
         disabled={!code.trim() || analyzing}
-        className="btn-primary w-full bg-gradient-to-r from-purple-400 via-pink-400 to-sky-400 hover:from-purple-500 hover:via-pink-500 hover:to-sky-500 disabled:from-gray-300 disabled:to-gray-400 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 text-lg shadow-lg disabled:cursor-not-allowed border-2 border-white/40"
+        className="btn-primary w-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 hover:from-purple-500 hover:via-pink-500 hover:to-purple-500 disabled:from-slate-700 disabled:to-slate-800 text-white font-bold py-5 px-10 rounded-xl transition-all duration-300 text-lg shadow-2xl disabled:cursor-not-allowed border border-purple-400/30 tracking-wide uppercase"
       >
-        {analyzing ? '👻 Summoning Spirits...' : '💀 Unleash the Haunting'}
+        {analyzing ? '⚡ Analyzing...' : '🚀 Unleash Analysis'}
       </button>
     </div>
   )
