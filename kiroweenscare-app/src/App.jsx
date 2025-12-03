@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import CodeAnalyzer from './components/CodeAnalyzer'
 import HauntedReport from './components/HauntedReport'
+import Guide from './components/Guide'
 import './App.css'
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <main className="container mx-auto px-6 pb-20 relative z-10 max-w-6xl">
         <CodeAnalyzer onAnalyze={setAnalysis} />
         {analysis && <HauntedReport analysis={analysis} />}
+        <Guide />
       </main>
 
       <footer className="text-center py-8 text-purple-400/60 text-sm relative z-10" style={{fontFamily: 'Nunito, sans-serif'}}>
