@@ -18,17 +18,17 @@ export default function CodeAnalyzer({ onAnalyze }) {
   }
 
   return (
-    <div className="max-w-4xl mx-auto bg-gray-800 bg-opacity-80 rounded-lg shadow-2xl p-6 border-2 border-purple-600">
-      <h2 className="text-2xl font-bold text-purple-400 mb-4">
+    <div className="code-input max-w-5xl mx-auto bg-gradient-to-br from-purple-900/50 to-indigo-900/50 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-purple-500/30">
+      <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300 mb-6">
         🔮 Submit Your Code for Haunting
       </h2>
       
-      <div className="mb-4">
-        <label className="block text-gray-300 mb-2">Language:</label>
+      <div className="mb-6">
+        <label className="block text-purple-200 mb-3 text-sm font-medium">Language:</label>
         <select 
           value={language}
           onChange={(e) => setLanguage(e.target.value)}
-          className="w-full bg-gray-700 text-gray-100 px-4 py-2 rounded border border-gray-600 focus:border-purple-500 focus:outline-none"
+          className="w-full bg-purple-950/50 text-purple-100 px-5 py-3 rounded-xl border border-purple-500/30 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/50 transition-all"
         >
           <option value="javascript">JavaScript</option>
           <option value="python">Python</option>
@@ -37,20 +37,20 @@ export default function CodeAnalyzer({ onAnalyze }) {
         </select>
       </div>
 
-      <div className="mb-4">
-        <label className="block text-gray-300 mb-2">Paste Your Code:</label>
+      <div className="mb-6">
+        <label className="block text-purple-200 mb-3 text-sm font-medium">Paste Your Code:</label>
         <textarea
           value={code}
           onChange={(e) => setCode(e.target.value)}
           placeholder="// Paste your cursed code here..."
-          className="w-full h-64 bg-gray-700 text-gray-100 px-4 py-3 rounded border border-gray-600 focus:border-purple-500 focus:outline-none font-mono text-sm"
+          className="w-full h-72 bg-purple-950/50 text-purple-100 px-5 py-4 rounded-xl border border-purple-500/30 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/50 font-mono text-sm transition-all placeholder-purple-400/50"
         />
       </div>
 
       <button
         onClick={handleAnalyze}
         disabled={!code.trim() || analyzing}
-        className="w-full bg-red-600 hover:bg-red-700 disabled:bg-gray-600 text-white font-bold py-3 px-6 rounded transition-colors duration-300 text-lg"
+        className="btn-primary w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 disabled:from-gray-600 disabled:to-gray-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 text-lg shadow-lg disabled:cursor-not-allowed"
       >
         {analyzing ? '👻 Summoning Spirits...' : '💀 Unleash the Haunting'}
       </button>
