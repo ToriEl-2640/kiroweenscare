@@ -5,7 +5,7 @@ export default function Guide() {
         📖 Meet the Monsters!
       </h2>
       
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-6 mb-10">
         <div className="guide-card p-6 bg-purple-100 rounded-2xl border-4 border-purple-400 shadow-lg">
           <div className="text-6xl mb-3">👻</div>
           <h3 className="text-2xl font-black text-purple-700 mb-2">Ghost</h3>
@@ -43,24 +43,24 @@ export default function Guide() {
         </div>
       </div>
 
-      <div className="mt-12 p-8 bg-gradient-to-r from-purple-200 to-pink-200 rounded-2xl border-4 border-purple-400">
-        <h3 className="text-2xl font-black text-purple-700 mb-6 text-center">How Bad Is It?</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="p-6 bg-gradient-to-r from-purple-200 to-pink-200 rounded-2xl border-4 border-purple-400">
+        <h3 className="text-xl font-black text-purple-700 mb-4 text-center">How Bad Is It?</h3>
+        <div className="flex flex-wrap justify-center gap-4">
           <div className="text-center">
-            <span className="inline-block px-5 py-3 rounded-full bg-red-500 text-white font-black text-sm shadow-lg">CRITICAL!</span>
-            <p className="text-sm text-purple-700 mt-2 font-bold">Fix NOW!</p>
+            <span className="inline-block px-4 py-2 rounded-full bg-red-500 text-white font-black text-xs shadow-lg">CRITICAL</span>
+            <p className="text-xs text-purple-700 mt-1 font-bold">Fix NOW</p>
           </div>
           <div className="text-center">
-            <span className="inline-block px-5 py-3 rounded-full bg-orange-500 text-white font-black text-sm shadow-lg">HIGH!</span>
-            <p className="text-sm text-purple-700 mt-2 font-bold">Fix Soon!</p>
+            <span className="inline-block px-4 py-2 rounded-full bg-orange-500 text-white font-black text-xs shadow-lg">HIGH</span>
+            <p className="text-xs text-purple-700 mt-1 font-bold">Fix Soon</p>
           </div>
           <div className="text-center">
-            <span className="inline-block px-5 py-3 rounded-full bg-yellow-500 text-white font-black text-sm shadow-lg">MEDIUM!</span>
-            <p className="text-sm text-purple-700 mt-2 font-bold">Fix Later!</p>
+            <span className="inline-block px-4 py-2 rounded-full bg-yellow-500 text-white font-black text-xs shadow-lg">MEDIUM</span>
+            <p className="text-xs text-purple-700 mt-1 font-bold">Fix Later</p>
           </div>
           <div className="text-center">
-            <span className="inline-block px-5 py-3 rounded-full bg-blue-500 text-white font-black text-sm shadow-lg">LOW!</span>
-            <p className="text-sm text-purple-700 mt-2 font-bold">No Rush!</p>
+            <span className="inline-block px-4 py-2 rounded-full bg-blue-500 text-white font-black text-xs shadow-lg">LOW</span>
+            <p className="text-xs text-purple-700 mt-1 font-bold">No Rush</p>
           </div>
         </div>
       </div>

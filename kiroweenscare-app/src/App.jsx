@@ -15,22 +15,22 @@ function App() {
       <div className="absolute bottom-32 left-1/4 w-36 h-36 bg-yellow-400 rounded-full opacity-20 floating-shape" style={{animationDelay: '2s'}}></div>
       <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-blue-400 rounded-full opacity-20 floating-shape" style={{animationDelay: '3s'}}></div>
       
-      <header className="text-center py-16 relative z-10">
-        <h1 className="text-8xl font-black text-purple-600 haunted-title mb-4" style={{fontFamily: 'Fredoka, sans-serif'}}>
+      <header className="text-center py-12 relative z-10">
+        <h1 className="text-7xl md:text-8xl font-black text-purple-600 haunted-title mb-4" style={{fontFamily: 'Fredoka, sans-serif'}}>
           👻 Kiroweenscare
         </h1>
-        <p className="text-3xl text-pink-600 font-bold" style={{fontFamily: 'Bubblegum Sans, sans-serif'}}>
+        <p className="text-2xl md:text-3xl text-pink-600 font-bold px-4" style={{fontFamily: 'Bubblegum Sans, sans-serif'}}>
           Where Bugs Become Monsters! 🎃
         </p>
       </header>
 
-      <main className="container mx-auto px-6 pb-20 relative z-10 max-w-6xl">
+      <main className="container mx-auto px-4 md:px-6 pb-16 relative z-10 max-w-6xl">
         <CodeAnalyzer onAnalyze={setAnalysis} />
         {analysis && <HauntedReport analysis={analysis} />}
         <Guide />
       </main>
 
-      <footer className="text-center py-8 text-purple-500 text-lg font-bold relative z-10" style={{fontFamily: 'Fredoka, sans-serif'}}>
+      <footer className="text-center py-6 text-purple-500 text-base md:text-lg font-bold relative z-10" style={{fontFamily: 'Fredoka, sans-serif'}}>
         Built with Kiro AI ✨
       </footer>
     </div>
