@@ -1,0 +1,44 @@
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fog {
+  0% { transform: translateX(-50%) translateY(0); }
+  100% { transform: translateX(50%) translateY(-20px); }
+}
+
+.haunted-title {
+  animation: flicker 3s infinite;
+  text-shadow: 0 0 10px #dc2626, 0 0 20px #dc2626, 0 0 30px #dc2626;
+}
+
+.haunted-subtitle {
+  animation: flicker 4s infinite;
+}
+
+.haunted-fog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  animation: fog 20s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.monster-card {
+  animation: float 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.monster-card:hover {
+  transform: scale(1.05) rotate(2deg);
+}

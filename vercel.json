@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd kiroweenscare-app && npm install && npm run build",
+  "outputDirectory": "kiroweenscare-app/dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
