@@ -43,7 +43,8 @@ export default function CodeAnalyzer({ onAnalyze }) {
           value={code}
           onChange={(e) => setCode(e.target.value)}
           placeholder="// Paste your spooky code here! 👻"
-          className="w-full h-64 md:h-72 bg-white text-purple-700 px-4 md:px-5 py-3 md:py-4 rounded-xl border-4 border-yellow-300 focus:border-yellow-500 focus:outline-none font-mono text-sm md:text-base shadow-xl placeholder-purple-400 hover:shadow-2xl transition-shadow"
+          rows="15"
+          className="w-full bg-white text-purple-700 px-4 md:px-5 py-3 md:py-4 rounded-xl border-4 border-yellow-300 focus:border-yellow-500 focus:outline-none font-mono text-sm md:text-base shadow-xl placeholder-purple-400 hover:shadow-2xl transition-shadow resize-y"
         />
       </div>
 

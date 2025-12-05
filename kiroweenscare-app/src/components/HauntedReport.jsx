@@ -1,3 +1,5 @@
+import React from 'react'
+
 const MONSTERS = {
   ghost: { emoji: '👻', name: 'Ghost', bg: 'bg-gradient-to-br from-purple-100 to-purple-200', border: 'border-purple-500', text: 'text-purple-700' },
   zombie: { emoji: '🧟', name: 'Zombie', bg: 'bg-gradient-to-br from-green-100 to-green-200', border: 'border-green-500', text: 'text-green-700' },

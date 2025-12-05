@@ -1,6 +1,6 @@
 export default function Guide() {
   return (
-    <div className="bg-gradient-to-br from-white to-yellow-50 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] p-10 border-8 border-yellow-400 transform hover:scale-[1.02] transition-transform duration-300" style={{fontFamily: 'Fredoka, sans-serif'}}>
+    <div className="bg-gradient-to-br from-white to-yellow-50 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] p-10 transform hover:scale-[1.02] transition-transform duration-300" style={{fontFamily: 'Fredoka, sans-serif'}}>
       <h2 className="text-4xl font-black bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent mb-10 text-center drop-shadow-md">
         📖 Meet the Monsters!
       </h2>
