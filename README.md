@@ -70,7 +70,7 @@ Created `.kiro/hooks/pre-commit.sh` to automate quality checks:
 
 **GitHub:** https://github.com/ToriEl-2640/kiroweenscare
 
-**Demo Video:** [Coming soon]
+**Demo Video:** https://youtu.be/BQxuQphKUIc?si=V-u_vyOb99E2pwWW
 
 ## 🚀 Installation
 
